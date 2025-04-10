@@ -2,7 +2,8 @@
   "name": "intern",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
+  "private": true,
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
@@ -21,7 +22,8 @@
     "export": "node src/scripts/export-articles.js",
     "delete": "node src/scripts/delete-articles.js",
     "get-report": "node src/scripts/clean-data.js",
-    "generate-report": "node src/scripts/generate-report.js"
+    "generate-report": "node src/scripts/generate-report.js",
+    "build": "echo 'No build step needed'"
   },
   "keywords": [
     "scraper",
@@ -31,6 +33,9 @@
   ],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@google/genai": "^0.7.0",
     "@google/generative-ai": "^0.24.0",
