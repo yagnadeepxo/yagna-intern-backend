@@ -47,8 +47,17 @@ app.get('/api/reports', async (req, res) => {
   }
 });
 
-// 🚀 NEW: Trigger automation via API
+const AUTH_TOKEN = process.env.CRON_SECRET; 
+
+// 🚀 NEW: Trigger automation via API with Authorization
 app.post('/api/generate-report', async (req, res) => {
+  const authHeader = req.headers.authorization || '';
+  const token = authHeader.replace('Bearer ', '');
+
+  if (token !== AUTH_TOKEN) {
+    return res.status(401).json({ success: false, error: 'Unauthorized' });
+  }
+
   try {
     console.log('\n[0/4] Deleting previous articles...');
     execSync('npm run delete', { stdio: 'inherit' });
@@ -69,6 +78,7 @@ app.post('/api/generate-report', async (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
+
 
 // Start server
 app.listen(PORT, () => {
