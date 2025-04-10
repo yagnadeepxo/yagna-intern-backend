@@ -1,0 +1,53 @@
+{
+  "name": "intern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "scrape": "node src/scrapeRunner.js",
+    "script1": "node src/scripts/fetch-startup-news.js",
+    "script2": "node src/scripts/fetch-crunchbase.js",
+    "script3": "node src/scripts/fetch-strictlyvc.js",
+    "script4": "node src/scripts/fetch-techreview.js",
+    "script5": "node src/scripts/fetch-venturebeat.js",
+    "script6": "node src/scripts/fetch-github-trending.js",
+    "script7": "node src/scripts/fetch-fastcompany.js",
+    "script8": "node src/scripts/fetch-crypto-news.js",
+    "script9": "node src/scripts/fetch-hackernews.js",
+    "script10": "node src/scripts/fetch-chinatechnews.js",
+    "run-all": "npm run script1 && npm run script2 && npm run script3 && npm run script4 && npm run script5 && npm run script6 && npm run script7 && npm run script8 && npm run script9 && npm run script10",
+    "export": "node src/scripts/export-articles.js",
+    "delete": "node src/scripts/delete-articles.js",
+    "get-report": "node src/scripts/clean-data.js",
+    "generate-report": "node src/scripts/generate-report.js"
+  },
+  "keywords": [
+    "scraper",
+    "puppeteer",
+    "supabase",
+    "startups"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^0.7.0",
+    "@google/generative-ai": "^0.24.0",
+    "@supabase/supabase-js": "^2.49.4",
+    "@xmldom/xmldom": "^0.9.8",
+    "axios": "^1.8.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "puppeteer": "^24.5.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-adblocker": "^2.13.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
